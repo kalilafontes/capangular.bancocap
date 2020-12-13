@@ -19,13 +19,17 @@
     <p>Email inválido</p>
   </div>
   <br>
+  <div *ngIf="!email.value" style="color: red;">
+    <p>Preencha o campo Email</p>
+  </div>
+  
   <p [hidden] = "!error" style="color: red;">
     {{ errorDesc }}
   </p>
-  <!-- <button class="btn waves-effect waves-light" style="width: 100%;" *ngIf="formLogin.valid"> <a style="color: #FFFFFF" routerLink="/home" routerLinkActive="active">Entrar</a>
-  </button>  -->
+  <button *ngIf="email.valid && email.value" class="btn waves-effect waves-light" style="width: 100%;" (click) = "onLoginErro(email.value, password.value)">Entrar
+  </button> 
 
-  <button class="btn waves-effect waves-light" style="width: 100%;" (click) = "onLoginErro(email.value, password.value)">Entrar
+  <button  *ngIf="!email.valid || !email.value"  class="btn waves-effect waves-light valid" style="width: 100%;"  >Entrar
   </button> 
   <br>
   

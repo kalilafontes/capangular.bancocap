@@ -16,9 +16,14 @@ export class LoginComponent implements OnInit {
   
   constructor(private router: Router) { }
 
- /*  onLogin(formLogin: NgForm){
-    this.router.navigate(['/home']);
-  } */
+  onLogin(email:string){
+    if (!email) {
+      this.error = true;      
+      this.errorDesc = "Preencha o campo e-mail"
+    } else{
+      this.error = false; 
+    }
+  } 
 
   onLoginErro(email:string, password:string){
     console.log(email, password);
