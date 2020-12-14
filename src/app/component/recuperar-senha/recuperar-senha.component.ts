@@ -4,7 +4,7 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-recuperar-senha',
   templateUrl: './recuperar-senha.component.html',
-  styleUrls: ['./recuperar-senha.component.css']
+  styleUrls: ['../../app.component.css']
 })
 export class RecuperarSenhaComponent implements OnInit {
 
