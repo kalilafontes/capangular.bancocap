@@ -1,10 +1,15 @@
-<div style= "width: 403px; margin: 0 auto; padding-top:30px; display: flex; flex-direction: column;" >
+<div style= " width: 1020px; margin: 0 auto; padding-top:30px; display: flex; flex-direction: column;" >
   <h1>Clientes Cadastrado</h1>
   <ag-grid-angular
     style="width: 100%;"
     class="ag-theme-alpine"
     [rowData]="linhas"
+    (gridReady)="onGridReady($event)"
+    [editType]="'fullRow'"
+    [frameworkComponents]="frameworkComponents"
     [columnDefs]="colunas"
-    domLayout='autoHeight'>
+    domLayout='autoHeight'    
+    >
   </ag-grid-angular>
+
 </div>

@@ -1,9 +1,12 @@
-<div style="width: 605px !important;  margin: 0 auto; padding-top:30px; display: flex; flex-direction: column;">
+<div style="width: 1205px !important;  margin: 0 auto; padding-top:30px; display: flex; flex-direction: column;">
   <h1>Contas Cadastradas</h1>
   <ag-grid-angular
     style="width: 100%;"
     class="ag-theme-alpine"
     [rowData]="linhas"
+    (gridReady)="onGridReady($event)"
+    [editType]="'fullRow'"
+    [frameworkComponents]="frameworkComponents"
     [columnDefs]="colunas"
     domLayout='autoHeight'>
   </ag-grid-angular>

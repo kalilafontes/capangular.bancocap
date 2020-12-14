@@ -1,9 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-/* import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatButtonModule} from '@angular/material/button';
-import {MatDatepickerModule} from '@angular/material/datepicker'; */
+import { AgGridModule } from 'ag-grid-angular';
+import { ButtonRendererComponent } from './button-renderer.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,7 +16,7 @@ import { ClienteViewComponent } from './component/cliente/cliente-view/cliente-v
 import { ContaViewComponent } from './component/conta/conta-view/conta-view.component';
 import { UsuarioComponent } from './component/usuario/usuario.component';
 import { IConfig, NgxMaskModule } from 'ngx-mask';
-import { AgGridModule } from 'ag-grid-angular';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const maskConfig: Partial<IConfig> = {
@@ -26,7 +25,7 @@ const maskConfig: Partial<IConfig> = {
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent, ButtonRendererComponent,
     ClienteComponent,
     LoginComponent,
     ContaComponent,
@@ -42,7 +41,7 @@ const maskConfig: Partial<IConfig> = {
     AppRoutingModule,
     FormsModule,
     NgxMaskModule.forRoot(maskConfig),
-    AgGridModule.withComponents([]),
+    AgGridModule.withComponents([ButtonRendererComponent]),
     BrowserAnimationsModule,
    /*  MatToolbarModule,
     MatButtonModule,
